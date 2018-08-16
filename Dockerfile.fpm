@@ -1,0 +1,16 @@
+FROM alpine:3.7
+
+RUN apk add --no-cache \
+        ruby \
+        ruby-dev \
+        gcc \
+        libffi-dev \
+        make \
+        libc-dev \
+        rpm \
+        tar \
+    && gem install --no-ri --no-rdoc fpm \
+    && mkdir /workdir
+WoRKDIR /workdir
+ENTRYPOINT ["fpm"]
+

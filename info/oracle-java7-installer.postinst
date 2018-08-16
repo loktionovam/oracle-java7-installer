@@ -25,8 +25,7 @@ esac
 
 
 ########Variables
-
-JAVA_VERSION=7u7 #must be modified for each release
+JAVA_VERSION=7u80
 FILENAME=jdk-${JAVA_VERSION}-linux-${dld}.tar.gz
 case $(uname -m) in
   'i686'    ) SHA256SUM_TGZ="798a3ea1d390358bdc01911d9aab7da1ff887157b56becc0e07e6f2c031f9ded";; #must be modified for each release
