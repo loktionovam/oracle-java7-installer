@@ -17,35 +17,36 @@ For Java 7 u80:
 
 3. Install vagrant, virtualbox (you may need to log out and log in because you added a user to the vboxusers group)
 
-       ```bash
-       sudo apt-get update
-       sudo apt-get install vagrant
-       ```
+```bash
+sudo apt-get update
+sudo apt-get install vagrant
+```
 
 4. Setup `JAVA_VERSION` variable in the `env.vars`
 
-       ```bash
-       PATH=/home/vagrant/bin:$PATH
-       JAVA_VERSION=7u80
-       ```
+```bash
+PATH=/home/vagrant/bin:$PATH
+JAVA_VERSION=7u80
+```
 
 5. (Оptional) Setup distro name in the `Vagrantfile`
 
-       ```ruby
-             db.vm.box = "ubuntu/xenial64"
-       ```
+```ruby
+    db.vm.box = "ubuntu/xenial64"
+```
 
 6. Run building oracle java package
 
-       ```bash
-       vagrant up
-       ```
+```bash
+vagrant up
+```
+
 7. Builded package package will appear in the current directory, for example
 
-       ```bash
-       ls -1 *.deb
-       oracle-java7-installer_7u80-custom-xenial-r100_amd64.deb
-       ```
+```bash
+ls -1 *.deb
+oracle-java7-installer_7u80-custom-xenial-r100_amd64.deb
+```
 
 The biggest reason for doing it this way rather than using <http://www.webupd8.org/2012/06/how-to-install-oracle-java-7-in-debian.html> is because this way gives  you a fat .deb file containing java, so you can install it in places that might not have connectivity (or have slow connectivity).
 
